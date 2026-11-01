@@ -1,0 +1,63 @@
+{
+  "model_name": "scikit-learn MLPClassifier DNN",
+  "framework": "scikit-learn",
+  "hidden_layers": [
+    32,
+    16
+  ],
+  "activation": "relu",
+  "output": "binary probability via predict_proba",
+  "loss": "binary cross-entropy (sklearn MLPClassifier log loss)",
+  "optimizer": "adam",
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "numeric_features": [
+    "age",
+    "trestbps",
+    "chol",
+    "thalach",
+    "oldpeak"
+  ],
+  "categorical_features": [
+    "sex",
+    "cp",
+    "fbs",
+    "restecg",
+    "exang",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "target_mapping": {
+    "0": "No Heart Disease (num=0)",
+    "1": "Heart Disease (num=1,2,3,4)"
+  },
+  "positive_class": 1,
+  "threshold": 0.5,
+  "random_seed": 42,
+  "preprocessing": "median numeric imputation + standard scaling; mode categorical imputation + one-hot encoding; fitted on training split only",
+  "libraries": {
+    "python": "3.15.0",
+    "pandas": "3.0.6",
+    "scikit_learn": "1.9.1",
+    "numpy": "2.5.4"
+  },
+  "metrics_file": "metrics.json",
+  "artifacts": [
+    "dnn_model.joblib",
+    "preprocessor.joblib"
+  ]
+}
